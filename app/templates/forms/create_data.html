@@ -1,0 +1,65 @@
+<form class="form-inline" action="" method="POST">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text">Full Name</span>
+    </div>
+    <input
+      class="form-control"
+      type="text"
+      id="employee_name"
+      name="name"
+      placeholder="Name"
+    />
+    <!-- </div> -->
+    <!-- <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="employee_surname">Surname</span>
+    </div> -->
+    <input
+      class="form-control"
+      type="text"
+      id="employee_surname"
+      name="surname"
+      placeholder="Surname"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="employee_role">Role</span>
+    </div>
+    <input
+      class="form-control"
+      type="text"
+      id="employee_role"
+      name="role"
+      placeholder="e.g. Project Manager"
+    />
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="employee_age">age</span>
+    </div>
+    <select multiple class="form-control" name="age" id="employee_age">
+      {% for n in range(100) %}
+      <option>{{n}}</option>
+      {% endfor %}
+    </select>
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" for="user_id">User ID</span>
+    </div>
+    <input
+      class="form-control"
+      type="integer"
+      id="user_id"
+      name="user_id"
+      placeholder="00000"
+    />
+    <div class="input-group-append">
+      {% include "forms/buttons/submit.html" %}
+    </div>
+  </div>
+  <!-- <div class="form-group mx-sm-3 mb-2"> -->
+  <!-- </div> -->
+</form>

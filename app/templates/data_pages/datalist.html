@@ -1,0 +1,48 @@
+{% extends "layout/layout.html" %} {% block title %}Datalist{% endblock %} {%
+block head %}{{ super() }}{% endblock %} {% block content %}
+<div class="container-fluid">
+  <div class="container mb-3"><h1>Datalist</h1></div>
+  <!-- {% if code and code == 200 %}
+  <div class="alert alert-success" role="alert">200: Ok - success</div>
+  {% elif code and code == 400 %}
+  <div class="alert alert-danger" role="alert">
+    400: Error - invalid request
+  </div> 
+  {%endif%}-->
+  <div class="row">
+    <div class="col-lg-6">
+      <h3>Contacts</h3>
+      <table class="table table-hover table-light table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Role</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for employee in employees %}
+          <tr>
+            <th scope="row">{{employee.user_id}}</th>
+            <td>{{employee.name}}</td>
+            <td>{{employee.role}}</td>
+            <td>
+              {% include "data_pages/buttons/view.html" %} {% include
+              "data_pages/buttons/update.html" %} {% include
+              "data_pages/buttons/delete.html" %}
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="col-lg-6">
+      <h3>Add contact</h3>
+      <!-- <div class="create-data"> -->
+      {% include "forms/create_data.html" %}
+      <!-- </div> -->
+    </div>
+  </div>
+</div>
+{% endblock %}

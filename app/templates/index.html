@@ -1,0 +1,15 @@
+{% extends "layout/layout.html" %} {% block title %}Home{% endblock %} {% block
+head %}{{ super() }}{% endblock %} {% block content %}
+<h1>CRUD App</h1>
+<p class="important">Welcome on my CRUD App homepage.</p>
+<ul>
+  {% for c in contacts %}
+  <li>{{c}}</li>
+  {% endfor %}
+</ul>
+<!-- {% if code == 200 %}
+<div class="alert alert-success" role="alert">200: Success</div>
+{% elif code == 404 %}
+<div class="alert alert-danger" role="alert">404: Error</div> 
+{%endif%} -->
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "layout/layout.html" %} {% block title %}Data{% endblock %} {% block
+head %}{{ super() }}{% endblock %} {% block content %}
+<h1>Data page</h1>
+<div class="card" style="width: 18rem">
+  <div class="card-header">{{employee}}</div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><label>Role</label> {{employee.role}}</li>
+    <li class="list-group-item"><label>Age</label> {{employee.age}}</li>
+    <li class="list-group-item"><label>ID</label> {{employee.user_id}}</li>
+  </ul>
+</div>
+  <div class="container">{% include "data_pages/buttons/return.html" %}</div>
+  {% endblock %}
+</div>

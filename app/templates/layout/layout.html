@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% block head %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+  </head>
+  <body>
+    <header>{% include "layout/navbar.html" %}</header>
+    <main>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} fade show" role="alert">
+          {{ category.upper() }} - {{ message }}
+        </div>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+      <section id="content">{% block content %}{% endblock %}</section>
+    </main>
+    <footer>
+      {% block footer %} &copy; Copyright {{ now.year }} by
+      <a href="http://domain.invalid/">Aron</a>. {% endblock %}
+    </footer>
+  </body>
+</html>

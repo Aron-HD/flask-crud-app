@@ -1,0 +1,5 @@
+{% extends "layout/layout.html" %} {% block title %}Delete{% endblock %} {%
+block head %}{{ super() }}{% endblock %} {% block content %}
+<h1>Delete page</h1>
+<div class="confirm-delete">{% include "forms/delete_data.html" %}</div>
+{% endblock %}

@@ -1,0 +1,57 @@
+<form action="" method="POST">
+  <div class="form-group mb-3">
+    <!-- <div class="form-group mb-3">
+      <label for="user_id">user ID</label>
+      <input
+        class="form-control"
+        type="integer"
+        id="user_id"
+        name="user_id"
+        value="{{employee.user_id}}"
+      />
+    </div> -->
+    <label for="employee_name">name</label>
+    <input
+      class="form-control"
+      type="text"
+      id="employee_name"
+      name="name"
+      value="{{employee.name}}"
+    />
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="employee_surname">Surname</label>
+    <input
+      class="form-control"
+      type="text"
+      id="employee_surname"
+      name="surname"
+      value="{{employee.surname}}"
+    />
+  </div>
+  <div class="form-group mb-3">
+    <label for="employee_age">age</label>
+    <select multiple class="form-control" id="employee_age" name="age">
+      <option value="{{employee.age}}" selected>{{employee.age}}</option>
+      {% for n in range(100) %}
+      <option value="{{n}}">{{n}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="employee_role">role</label>
+    <input
+      class="form-control"
+      type="text"
+      id="employee_role"
+      name="role"
+      value="{{employee.role}}"
+    />
+  </div>
+  <div class="form-group">
+    {% include "forms/buttons/submit.html" %} {% include
+    "forms/buttons/cancel.html" %}
+  </div>
+</form>
